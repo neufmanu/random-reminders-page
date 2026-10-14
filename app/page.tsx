@@ -1,8 +1,10 @@
 import {formatTimeRangeForLocale} from "@/app/timeRange";
+import React from "react";
 
 const AppFrame = () => {
     return (
-        <div className="sticky w-80 h-140 rounded-4xl bg-gray-400 top-8 m-auto shadow-2xl"></div>
+        <div
+            className="lg:sticky w-60 lg:w-full lg:max-w-80 h-100 lg:h-140 rounded-4xl bg-light top-8 m-auto shadow-2xl"></div>
     )
 }
 
@@ -13,16 +15,17 @@ const SectionTextWrapper = ({heading, text, children}: {
 }) => {
     return (
         <>
-            <div className="flex h-full items-center justify-center px-8">
-                <h1 className="text-4xl text-right leading-16">
+            <div className="flex h-full items-center justify-center lg:px-8">
+                <h1 className="text-4xl font-bold lg:text-right leading-16 whitespace-pre-line">
                     {heading}
                 </h1>
             </div>
             {children}
-            <div className="flex h-full items-center justify-center px-8">
+            <div className="flex h-full items-center justify-center lg:px-8">
                 <div className="flex flex-col gap-8">
                     {text}
-                    <button className="px-5 py-2.5 rounded-xl bg-black w-fit">Some Call to action</button>
+                    <button className="px-5 py-2.5 rounded-xl bg-light shadow-md w-fit">Some Call to action
+                    </button>
                 </div>
             </div>
         </>
@@ -31,9 +34,9 @@ const SectionTextWrapper = ({heading, text, children}: {
 
 const FeatureWrapper = () => {
     return (
-        <div className="flex items-center flex-col gap-2">
-            <div className="h-50 w-50 bg-yellow-400 rounded-4xl shadow-xl"/>
-            <p>Feature description</p>
+        <div className="flex items-center flex-col gap-4">
+            <div className="h-50 w-50 bg-light rounded-4xl shadow-lg"/>
+            <p className="font-bold">Feature description</p>
         </div>
     )
 }
@@ -435,9 +438,9 @@ const ReminderExamples = () => {
 
 
     return (
-        <section className={`min-h-screen w-full flex flex-col items-center justify-center bg-pink-900 gap-8 p-8`}>
+        <section className={`min-h-screen w-full flex flex-col items-center justify-center gap-8 p-8`}>
             <div className="flex flex-col gap-4">
-                <p className="text-2xl">sed diam nonumy eirmod tempor</p>
+                <h2 className="text-4xl font-bold">For all kinds of tasks and thoughts</h2>
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
             </div>
             <div className="flex flex-row gap-4 flex-wrap items-center justify-center">
@@ -457,70 +460,73 @@ const ReminderExamples = () => {
 }
 
 export default function Home() {
-    const baseSectionClasses = "min-h-screen w-full p-8 grid grid-flow-row grid-cols-3";
+    const baseSectionClasses = "min-h-screen w-full p-8 grid grid-flow-row xs:grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0";
     const dummyHeading = "Lorem ipsum dolor sit amet consetetur sadipscing elitr";
 
     const dummyText = <p className={"text leading-8"}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor\n
-        invidunt\n <span className={"bg-fuchsia-800 rounded-md p-1.5 shadow-xl"}> ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</span> justo\n
-        duo\n dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor.</p>;
+        nonumy eirmod tempor
+        invidunt <span className={"bg-light p-1 rounded"}> ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</span> justo
+        duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor.</p>;
 
     return (
-        <main className="relative">
-            {/* Heading */}
-            <nav className="absolute p-10 w-full flex items-center justify-between">
-                <a className={"w-10 h-10 rounded-xl bg-white "}/>
+        <main className="relative text-black"
+              style={{background: 'radial-gradient(ellipse farthest-corner at top left, #93C5FD 0%,17.48%,#86EFAC 38%,#F0ABFC 77%,#FCA5A5 100%)'}}>
+            <div className="max-w-350 m-auto">
+                {/* Heading */}
+                <nav className="absolute p-4 lg:p-10 w-full max-w-350 flex items-center justify-between">
+                    <a className={"w-11 h-11 rounded-xl bg-white shadow-md"}/>
+                    <a className="px-5 py-2.5 rounded-xl bg-light shadow-md w-fit">
+                        Get The app
+                    </a>
+                </nav>
 
-                <a className="px-5 py-2.5 rounded-xl bg-black w-fit">
-                    Get The app
-                </a>
 
-            </nav>
+                {/* Intro */}
+                <section className={`${baseSectionClasses}`}>
+                    <div className="mt-8 lg:mt-0 lg:hidden"/>
+                    <SectionTextWrapper heading={"Remind yourself of what is important"} text={dummyText}>
+                        <AppFrame/>
+                    </SectionTextWrapper>
+                </section>
 
-            {/* Intro */}
-            <section className={`${baseSectionClasses} bg-blue-900`}>
-                <SectionTextWrapper heading={"Some interesting intro heading to catch"} text={dummyText}>
-                    <AppFrame/>
-                </SectionTextWrapper>
-            </section>
+                <ReminderExamples/>
 
-            <ReminderExamples/>
+                {/* Story / Overview */}
+                <section className={`${baseSectionClasses}`}>
+                    <SectionTextWrapper heading={"Made by you, as random as you like"} text={dummyText}>
+                        <AppFrame/>
+                    </SectionTextWrapper>
+                </section>
 
-            {/* Story / Overview */}
-            <section className={`${baseSectionClasses} bg-green-900`}>
-                <SectionTextWrapper heading={dummyHeading} text={dummyText}>
-                    <AppFrame/>
-                </SectionTextWrapper>
-            </section>
-
-            {/* Features */}
-            <section className={`min-h-screen w-full flex items-center justify-center bg-orange-900`}>
-                <div className="flex flex-col gap-8">
-                    <div className="flex flex-col gap-4">
-                        <p className="text-2xl">sed diam nonumy eirmod tempor</p>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                            tempor</p>
+                {/* Features */}
+                <section className={`min-h-screen w-full flex items-center justify-center p-8`}>
+                    <div className="flex flex-col gap-8">
+                        <div className="flex flex-col gap-4">
+                            <p className="text-4xl font-bold">Customize your random notifications</p>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                tempor</p>
+                        </div>
+                        <div className={`flex items-center flex-col lg:flex-row gap-8 justify-center h-full w-full`}>
+                            <FeatureWrapper/>
+                            <FeatureWrapper/>
+                            <FeatureWrapper/>
+                            <FeatureWrapper/>
+                        </div>
                     </div>
-                    <div className={`flex items-center flex-row gap-8 justify-center h-full w-full`}>
-                        <FeatureWrapper/>
-                        <FeatureWrapper/>
-                        <FeatureWrapper/>
-                        <FeatureWrapper/>
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            {/* Call To Action*/}
-            <section className={`${baseSectionClasses} bg-purple-900`}>
-                <SectionTextWrapper heading={dummyHeading} text={dummyText}>
-                    <AppFrame/>
-                </SectionTextWrapper>
-            </section>
+                {/* Call To Action*/}
+                <section className={`${baseSectionClasses}`}>
+                    <SectionTextWrapper heading={"Start now and \n notify yourself"} text={dummyText}>
+                        <AppFrame/>
+                    </SectionTextWrapper>
+                </section>
 
-            {/* Footer */}
-            <footer className={`${baseSectionClasses} bg-teal-900`}>
-                Some footer content
-            </footer>
+                {/* Footer */}
+                <footer className={`w-full p-8 text-center`}>
+                    <p>Made with 🖤 by Michael Böhm and Manuel Breining-Neufeld</p>
+                </footer>
+            </div>
         </main>
     );
 }

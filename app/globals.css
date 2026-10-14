@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/fonts/Quicksand-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/fonts/Quicksand-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-light: #f2f2f2;
+    --color-tabbar-light: #f8f8f8;
+    --color-dark: #454545;
+    --color-tabbar-dark: #606060;
+
+    --animate-wiggle: wiggle 40s ease-in-out infinite;
+
+    @keyframes wiggle {
+        0%, 100% {
+            background: #e9d5ff
+        }
+        12.5% {
+            background: #fecaca
+        }
+        25% {
+            background: #fde68a
+        }
+        37.5% {
+            background: #d9f99d
+        }
+        50% {
+            background: #bbf7d0
+        }
+        62.5% {
+            background: #99f6e4
+        }
+        75% {
+            background: #bfdbfe
+        }
+        87.5% {
+            background: #f5d0fe
+        }
+    }
+
+    --animate-ping: ping 8s ease-in-out infinite;
+
+    @keyframes ping {
+        0% {
+            background: #e9d5ff;
+            top: -24px;
+            transform: rotate(0deg);
+        }
+        12.5% {
+            background: #fecaca;
+            top: 12px;
+        }
+        25% {
+            background: #fde68a;
+            top: -24px;
+        }
+        37.5% {
+            background: #d9f99d;
+            top: 12px;
+        }
+        50% {
+            background: #bbf7d0;
+            top: -24px;
+            transform: rotate(360deg);
+        }
+        62.5% {
+            background: #99f6e4;
+            top: 12px;
+        }
+        75% {
+            background: #bfdbfe;
+            top: -24px;
+        }
+        87.5% {
+            background: #f5d0fe;
+            top: 12px;
+        }
+        100% {
+            background: #e9d5ff;
+            top: -24px;
+        }
+    }
+}
+
