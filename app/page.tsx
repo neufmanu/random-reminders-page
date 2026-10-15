@@ -4,7 +4,7 @@ import React from "react";
 const AppFrame = () => {
     return (
         <div
-            className="lg:sticky w-60 lg:w-full lg:max-w-80 h-100 lg:h-140 rounded-4xl bg-light top-8 m-auto shadow-2xl"></div>
+            className="w-60 lg:w-full lg:max-w-80 h-100 lg:h-140 rounded-4xl bg-light m-auto shadow-2xl"></div>
     )
 }
 
@@ -16,9 +16,9 @@ const SectionTextWrapper = ({heading, text, children}: {
     return (
         <>
             <div className="flex h-full items-center justify-center lg:px-8">
-                <h1 className="text-4xl font-bold lg:text-right leading-16 whitespace-pre-line">
+                <h2 className="text-4xl font-bold lg:text-right leading-16 whitespace-pre-line">
                     {heading}
-                </h1>
+                </h2>
             </div>
             {children}
             <div className="flex h-full items-center justify-center lg:px-8">
@@ -32,11 +32,11 @@ const SectionTextWrapper = ({heading, text, children}: {
     )
 }
 
-const FeatureWrapper = () => {
+const FeatureWrapper = ({text}: { text: string }) => {
     return (
         <div className="flex items-center flex-col gap-4">
-            <div className="h-50 w-50 bg-light rounded-4xl shadow-lg"/>
-            <p className="font-bold">Feature description</p>
+            <div className="h-36 w-36 lg:h-50 lg:w-50 bg-light rounded-4xl shadow-lg"/>
+            <h3 className="font-bold">{text}</h3>
         </div>
     )
 }
@@ -220,7 +220,7 @@ const ReminderCard = ({reminder}: { reminder: Partial<Reminder> }) => {
         if (isContiguousRange) {
             const firstDay = sortedWeekdays[0];
             const lastDay = sortedWeekdays[sortedWeekdays.length - 1];
-            return `${(`${firstDay}`)}–${(`${lastDay}`)}`;
+            return `${(`${firstDay}`)} – ${(`${lastDay}`)}`;
         }
 
         return sortedWeekdays
@@ -231,7 +231,7 @@ const ReminderCard = ({reminder}: { reminder: Partial<Reminder> }) => {
     if (!reminder.color || !reminder.timeRange?.from || !reminder.timeRange?.to) return;
 
     return (
-        <div className={`flex rounded-2xl shadow flex-col text-black`} role="button">
+        <div className={`flex width-[30%] rounded-2xl shadow flex-col text-black`} role="button">
             <div className={reminder?.isActive
                 ? `${baseCardHeaderStyles} bg-linear-[-45deg] ${cardReminderColors[reminder.color].light} ${cardReminderColors[reminder.color].dark} opacity-90`
                 : `${baseCardHeaderStyles} bg-gray-300`}
@@ -252,7 +252,7 @@ const ReminderCard = ({reminder}: { reminder: Partial<Reminder> }) => {
                     className={`w-0.5 rounded-full ${reminder?.isActive ? cardReminderColors[reminder?.color]?.base : 'bg-gray-400'}`}
                 ></div>
                 <p className="flex min-w-0 items-center justify-center text-center">
-                    {reminder?.timesPerInterval}x {'intervals.full.' + reminder?.interval}
+                    {reminder?.timesPerInterval}x {reminder?.interval}
                 </p>
                 <div
                     className={`w-0.5 rounded-full ${reminder?.isActive ? cardReminderColors[reminder?.color]?.base : 'bg-gray-400'}`}
@@ -436,23 +436,25 @@ const ReminderExamples = () => {
         },
     ];
 
+    const baseStyles = "w-full grid grid-flow-row xs:grid-cols-1 lg:grid-cols-3 gap-4 lg:px-20"
+
 
     return (
-        <section className={`min-h-screen w-full flex flex-col items-center justify-center gap-8 p-8`}>
-            <div className="flex flex-col gap-4">
+        <section className={`w-full flex flex-col items-center justify-center gap-4 p-8 py-4`}>
+            <div className="flex flex-col gap-4 pb-8">
                 <h2 className="text-4xl font-bold">For all kinds of tasks and thoughts</h2>
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
             </div>
-            <div className="flex flex-row gap-4 flex-wrap items-center justify-center">
+            <div className={baseStyles}>
                 {reminderExamplesOne.map((r, i) => <ReminderCard key={i} reminder={r}/>)}
             </div>
-            <div className="flex flex-row gap-4 flex-wrap items-center justify-center">
+            <div className={baseStyles}>
                 {reminderExamplesTwo.map((r, i) => <ReminderCard key={i} reminder={r}/>)}
             </div>
-            <div className="flex flex-row gap-4 flex-wrap items-center justify-center">
+            <div className={baseStyles}>
                 {reminderExamplesThree.map((r, i) => <ReminderCard key={i} reminder={r}/>)}
             </div>
-            <div className="flex flex-row gap-4 flex-wrap items-center justify-center">
+            <div className={baseStyles}>
                 {reminderExamplesFour.map((r, i) => <ReminderCard key={i} reminder={r}/>)}
             </div>
         </section>
@@ -460,7 +462,7 @@ const ReminderExamples = () => {
 }
 
 export default function Home() {
-    const baseSectionClasses = "min-h-screen w-full p-8 grid grid-flow-row xs:grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-0";
+    const baseSectionClasses = "w-full p-8 grid grid-flow-row xs:grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-4 py-10 lg:py-24";
     const dummyHeading = "Lorem ipsum dolor sit amet consetetur sadipscing elitr";
 
     const dummyText = <p className={"text leading-8"}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -474,9 +476,12 @@ export default function Home() {
             <div className="max-w-350 m-auto">
                 {/* Heading */}
                 <nav className="absolute p-4 lg:p-10 w-full max-w-350 flex items-center justify-between">
-                    <a className={"w-11 h-11 rounded-xl bg-white shadow-md"}/>
+                    <div className="flex flex-row gap-4 items-center">
+                        <a className={"w-11 h-11 rounded-xl bg-white shadow-md"}/>
+                        <h1 className="text-lg font-bold">Stoobs: Random Reminders</h1>
+                    </div>
                     <a className="px-5 py-2.5 rounded-xl bg-light shadow-md w-fit">
-                        Get The app
+                        Get the App
                     </a>
                 </nav>
 
@@ -499,7 +504,7 @@ export default function Home() {
                 </section>
 
                 {/* Features */}
-                <section className={`min-h-screen w-full flex items-center justify-center p-8`}>
+                <section className={`w-full flex items-center justify-center p-8 py-8`}>
                     <div className="flex flex-col gap-8">
                         <div className="flex flex-col gap-4">
                             <p className="text-4xl font-bold">Customize your random notifications</p>
@@ -507,10 +512,14 @@ export default function Home() {
                                 tempor</p>
                         </div>
                         <div className={`flex items-center flex-col lg:flex-row gap-8 justify-center h-full w-full`}>
-                            <FeatureWrapper/>
-                            <FeatureWrapper/>
-                            <FeatureWrapper/>
-                            <FeatureWrapper/>
+                            <div className={'flex flex-row gap-6'}>
+                                <FeatureWrapper text={"Choose interval"}/>
+                                <FeatureWrapper text={"Add notification entries"}/>
+                            </div>
+                            <div className={'flex flex-row gap-8'}>
+                                <FeatureWrapper text={"Customize notifications"}/>
+                                <FeatureWrapper text={"Select a timing"}/>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -524,7 +533,7 @@ export default function Home() {
 
                 {/* Footer */}
                 <footer className={`w-full p-8 text-center`}>
-                    <p>Made with 🖤 by Michael Böhm and Manuel Breining-Neufeld</p>
+                    <p className={"whitespace-pre-line"}>{"Made with 🖤 by \n Michael Böhm and Manuel Breining-Neufeld"}</p>
                 </footer>
             </div>
         </main>
