@@ -1,5 +1,6 @@
 import {formatTimeRangeForLocale} from "@/app/timeRange";
 import React from "react";
+import Image from "next/image";
 
 const AppFrame = () => {
     return (
@@ -463,7 +464,6 @@ const ReminderExamples = () => {
 
 export default function Home() {
     const baseSectionClasses = "w-full p-8 grid grid-flow-row xs:grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-4 py-10 lg:py-24";
-    const dummyHeading = "Lorem ipsum dolor sit amet consetetur sadipscing elitr";
 
     const dummyText = <p className={"text leading-8"}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
         nonumy eirmod tempor
@@ -477,7 +477,14 @@ export default function Home() {
                 {/* Heading */}
                 <nav className="absolute p-4 lg:p-10 w-full max-w-350 flex items-center justify-between">
                     <div className="flex flex-row gap-4 items-center">
-                        <a className={"w-11 h-11 rounded-xl bg-white shadow-md"}/>
+                        <a className={"w-11 h-11 rounded-xl bg-white shadow-md"}>
+                            <Image
+                                src="/random-reminders-page/logo.svg"
+                                width={500}
+                                height={500}
+                                alt="Picture of the author"
+                            />
+                        </a>
                         <h1 className="text-lg font-bold">Stoobs: Random Reminders</h1>
                     </div>
                     <a className="px-5 py-2.5 rounded-xl bg-light shadow-md w-fit">
