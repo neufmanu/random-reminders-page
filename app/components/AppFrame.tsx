@@ -15,7 +15,7 @@ export const AppFrame = () => {
     }, []);
 
     return (
-        <div className="flex flex-col gap-2 items-center">
+        <div className="flex flex-col gap-4 items-center">
             <div className="w-full relative max-w-80 h-165 rounded-4xl overflow-hidden m-auto shadow-2xl">
                 {sources.map((item, i) => (
                     <Image key={item} priority={i === 0} fill src={item} alt={'alt'}
