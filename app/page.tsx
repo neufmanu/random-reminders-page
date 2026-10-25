@@ -33,7 +33,7 @@ export default function Home() {
                 </Section>
                 <FeatureSection/>
                 <Section>
-                    <SectionWrapper heading={"Start now and \n notify yourself"} text={dummyText}>
+                    <SectionWrapper heading={"Start now and notify yourself"} text={dummyText}>
                         <AppFrame/>
                     </SectionWrapper>
                 </Section>

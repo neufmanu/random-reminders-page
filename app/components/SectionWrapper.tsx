@@ -8,9 +8,9 @@ export const SectionWrapper = ({heading, text, children}: {
     return (
         <>
             <div className="flex h-full items-center justify-center lg:px-8">
-                r <h2 className="text-4xl font-bold lg:text-right leading-16 whitespace-pre-line">
-                {heading}
-            </h2>
+                <h2 className="text-2xl lg:text-4xl font-bold lg:text-right lg:leading-16 whitespace-pre-line">
+                    {heading}
+                </h2>
             </div>
             {children}
             <div className="flex h-full items-center justify-center lg:px-8">

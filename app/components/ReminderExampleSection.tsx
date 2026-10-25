@@ -48,7 +48,7 @@ export const ReminderExampleSection = () => {
     return (
         <section className={`w-full flex flex-col items-center justify-center gap-4 p-8 py-4`}>
             <div className="flex flex-col gap-4 pb-8">
-                <h2 className="text-4xl font-bold">For all kinds of tasks and thoughts</h2>
+                <h2 className="text-2xl lg:text-4xl font-bold">For all kinds of tasks and thoughts</h2>
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
             </div>
             <div className={baseStyles}>
