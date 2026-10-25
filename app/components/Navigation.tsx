@@ -1,6 +1,8 @@
 import Image from "next/image";
 import {DownloadIcon} from "@/app/components/DownloadIcon";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export const Navigation = () => {
     return (
         <nav
@@ -9,7 +11,7 @@ export const Navigation = () => {
                 <a className={"lg:w-11 lg:h-11 rounded-xl shadow-md"}>
                     {/* TODO: Make this more dynamic! */}
                     <Image
-                        src="random-reminders-page/logo.svg"
+                        src={`${basePath}/logo.svg`}
                         width={50}
                         height={50}
                         alt="Picture of the author"

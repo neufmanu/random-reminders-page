@@ -2,8 +2,11 @@
 import React from "react";
 import Image from "next/image";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-const sources: string[] = ['random-reminders-page/images/header_1.PNG', 'random-reminders-page/images/header_2.PNG', 'random-reminders-page/images/header_3.PNG', 'random-reminders-page/images/header_4.PNG']
+
+const sources: string[] = [`${basePath}/images/header_1.PNG`, `${basePath}/images/header_2.PNG`, `${basePath}/images/header_3.PNG`, `${basePath}/images/header_4.PNG`]
+
 export const AppFrame = () => {
     const [index, setIndex] = React.useState(0);
 
