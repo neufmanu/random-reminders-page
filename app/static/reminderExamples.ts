@@ -1,7 +1,41 @@
 import {Reminder} from "@/app/types/reminder";
 import {emptyReminder} from "@/app/static/reminderExample";
 
-export const reminderExamplesTwo: Partial<Reminder>[] = [
+export const reminderExamples: Partial<Reminder>[] = [
+    {
+        ...emptyReminder,
+        title: 'examples.drinkWater',
+        color: 'blue',
+        weekdays: ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'],
+        timeRange: {
+            from: '08:00',
+            to: '21:00',
+        },
+        timesPerInterval: 4,
+        minTimeBetween: 60,
+    },
+    {
+        ...emptyReminder,
+        title: 'examples.stretch',
+        color: 'purple',
+        timeRange: {
+            from: '08:00',
+            to: '18:00',
+        },
+        timesPerInterval: 4,
+        minTimeBetween: 60
+    },
+    {
+        ...emptyReminder,
+        title: 'examples.waterPlants',
+        color: 'green',
+        weekdays: ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'],
+        timeRange: {
+            from: '10:00',
+            to: '20:00',
+        },
+        interval: 'weekly',
+    },
     {
         ...emptyReminder,
         title: 'examples.motivationalQuote',
@@ -41,9 +75,6 @@ export const reminderExamplesTwo: Partial<Reminder>[] = [
         timesPerInterval: 4,
         minTimeBetween: 60
     },
-];
-
-export const reminderExamplesThree: Partial<Reminder>[] = [
     {
         ...emptyReminder,
         title: 'examples.stopScreentime',
@@ -77,9 +108,6 @@ export const reminderExamplesThree: Partial<Reminder>[] = [
             to: '18:00',
         },
     },
-];
-
-export const reminderExamplesFour: Partial<Reminder>[] = [
     {
         ...emptyReminder,
         title: 'examples.declutterSmallArea',
@@ -112,3 +140,4 @@ export const reminderExamplesFour: Partial<Reminder>[] = [
         interval: 'yearly',
     },
 ];
+

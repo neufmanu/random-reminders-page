@@ -17,7 +17,7 @@ export default function Home() {
     return (
         <main className="relative text-black"
               style={{background: 'radial-gradient(ellipse farthest-corner at top left, #93C5FD 0%,17.48%,#86EFAC 38%,#F0ABFC 77%,#FCA5A5 100%)'}}>
-            <div className="max-w-350 m-auto">
+            <div className="max-w-180 lg:max-w-350 m-auto">
                 <Navigation/>
                 <Section>
                     <div className="mt-8 lg:mt-0 lg:hidden"/>

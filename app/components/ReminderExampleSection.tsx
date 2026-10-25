@@ -1,48 +1,8 @@
-import {Reminder} from "@/app/types/reminder";
-import {emptyReminder} from "@/app/static/reminderExample";
-import {reminderExamplesFour, reminderExamplesThree, reminderExamplesTwo} from "@/app/static/reminderExamples";
 import {ReminderCard} from "@/app/components/ReminderCard";
+import {reminderExamples} from "@/app/static/reminderExamples";
 
 export const ReminderExampleSection = () => {
-    const reminderExamplesOne: Partial<Reminder>[] = [
-        {
-            ...emptyReminder,
-            title: 'examples.drinkWater',
-            color: 'blue',
-            weekdays: ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'],
-            timeRange: {
-                from: '08:00',
-                to: '21:00',
-            },
-            timesPerInterval: 4,
-            minTimeBetween: 60,
-        },
-        {
-            ...emptyReminder,
-            title: 'examples.stretch',
-            color: 'purple',
-            timeRange: {
-                from: '08:00',
-                to: '18:00',
-            },
-            timesPerInterval: 4,
-            minTimeBetween: 60
-        },
-        {
-            ...emptyReminder,
-            title: 'examples.waterPlants',
-            color: 'green',
-            weekdays: ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'],
-            timeRange: {
-                from: '10:00',
-                to: '20:00',
-            },
-            interval: 'weekly',
-        },
-    ];
-
-
-    const baseStyles = "w-full grid grid-flow-row xs:grid-cols-1 lg:grid-cols-3 gap-4 lg:px-20"
+    const baseStyles = "w-full grid grid-flow-row xs:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:px-20"
 
 
     return (
@@ -52,17 +12,9 @@ export const ReminderExampleSection = () => {
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
             </div>
             <div className={baseStyles}>
-                {reminderExamplesOne.map((r, i) => <ReminderCard key={i} reminder={r}/>)}
+                {reminderExamples.map((r, i) => <ReminderCard key={i} reminder={r}/>)}
             </div>
-            <div className={baseStyles}>
-                {reminderExamplesTwo.map((r, i) => <ReminderCard key={i} reminder={r}/>)}
-            </div>
-            <div className={baseStyles}>
-                {reminderExamplesThree.map((r, i) => <ReminderCard key={i} reminder={r}/>)}
-            </div>
-            <div className={baseStyles}>
-                {reminderExamplesFour.map((r, i) => <ReminderCard key={i} reminder={r}/>)}
-            </div>
+
         </section>
     )
 

@@ -5,19 +5,19 @@ export const FeatureSection = () => {
     return (
         <section className={`w-full flex items-center justify-center p-8 py-8`}>
             <div className="flex flex-col gap-8">
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-6">
                     <h3 className="text-2xl lg:text-4xl font-bold">Customize your random notifications</h3>
                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                         tempor</p>
                 </div>
-                <div className={`flex items-center flex-col lg:flex-row gap-8 justify-center h-full w-full`}>
+                <div className={`flex items-center flex-col md:flex-row gap-6 justify-center h-full w-full`}>
                     <div className={'flex flex-row gap-6'}>
-                        <FeatureWrapper text={"Custom look"}/>
-                        <FeatureWrapper text={"Additional Titles"}/>
+                        <FeatureWrapper/>
+                        <FeatureWrapper/>
                     </div>
-                    <div className={'flex flex-row gap-8'}>
-                        <FeatureWrapper text={"Select intervals"}/>
-                        <FeatureWrapper text={"Match your timing"}/>
+                    <div className={'flex flex-row gap-6'}>
+                        <FeatureWrapper/>
+                        <FeatureWrapper/>
                     </div>
                 </div>
             </div>
