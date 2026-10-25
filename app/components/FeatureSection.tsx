@@ -3,7 +3,7 @@ import React from "react";
 
 export const FeatureSection = () => {
     return (
-        <section className={`w-full flex items-center justify-center p-8 py-8`}>
+        <section className={`w-full flex items-center justify-center p-8 lg:py-20`}>
             <div className="flex flex-col gap-8">
                 <div className="flex flex-col gap-6">
                     <h3 className="text-2xl lg:text-4xl font-bold">Customize your random notifications</h3>
