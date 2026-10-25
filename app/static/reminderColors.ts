@@ -1,0 +1,100 @@
+import {ReminderColor} from "@/app/types/reminder";
+
+export const cardReminderColors: ReminderColor = {
+    amber: {
+        light: 'from-amber-200',
+        hexLight: '#fde68a',
+        dark: 'to-amber-300',
+        hexDark: '#fcd34d',
+        base: 'bg-amber-400',
+        border: 'border-amber-300'
+    },
+    blue: {
+        light: 'from-blue-200',
+        hexLight: '#bfdbfe',
+        dark: 'to-blue-300',
+        hexDark: '#93c5fd',
+        base: 'bg-blue-400',
+        border: 'border-blue-300'
+    },
+    purple: {
+        light: 'from-purple-200',
+        hexLight: '#e9d5ff',
+        dark: 'to-purple-300',
+        hexDark: '#d8b4fe',
+        base: 'bg-purple-400',
+        border: 'border-purple-300'
+    },
+    fuchsia: {
+        light: 'from-fuchsia-200',
+        hexLight: '#f5d0fe',
+        dark: 'to-fuchsia-300',
+        hexDark: '#f0abfc',
+        base: 'bg-fuchsia-400',
+        border: 'border-fuchsia-300',
+    },
+    pink: {
+        light: 'from-pink-200',
+        hexLight: '#fbcfe8',
+        dark: 'to-pink-300',
+        hexDark: '#f9a8d4',
+        base: 'bg-pink-400',
+        border: 'border-pink-300',
+    },
+    red: {
+        light: 'from-red-200',
+        hexLight: '#fecaca',
+        dark: 'to-red-300',
+        hexDark: '#fca5a5',
+        base: 'bg-red-400',
+        border: 'border-red-300',
+    },
+    teal: {
+        light: 'from-teal-200',
+        hexLight: '#99f6e4',
+        dark: 'to-teal-300',
+        hexDark: '#5eead4',
+        base: 'bg-teal-400',
+        border: 'border-teal-300',
+    },
+    indigo: {
+        light: 'from-indigo-200',
+        hexLight: '#c7d2fe',
+        dark: 'to-indigo-300',
+        hexDark: '#a5b4fc',
+        base: 'bg-indigo-400',
+        border: 'border-indigo-300',
+    },
+    orange: {
+        light: 'from-orange-200',
+        hexLight: '#fed7aa',
+        dark: 'to-orange-300',
+        hexDark: '#fdba74',
+        base: 'bg-orange-400',
+        border: 'border-orange-300',
+    },
+    yellow: {
+        light: 'from-yellow-200',
+        hexLight: '#fef08a',
+        dark: 'to-yellow-300',
+        hexDark: '#fde047',
+        base: 'bg-yellow-400',
+        border: 'border-yellow-300',
+    },
+    green: {
+        light: 'from-green-200',
+        hexLight: '#bbf7d0',
+        dark: 'to-green-300',
+        hexDark: '#86efac',
+        base: 'bg-green-400',
+        border: 'border-green-300',
+    },
+    lime: {
+        light: 'from-lime-200',
+        hexLight: '#d9f99d',
+        dark: 'to-lime-300',
+        hexDark: '#bef264',
+        base: 'bg-lime-400',
+        border: 'border-lime-300',
+    },
+}
