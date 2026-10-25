@@ -6,7 +6,7 @@ export const Navigation = () => {
         <nav
             className="absolute px-8 py-4 lg:p-4 lg:p-10 w-full max-w-180 lg:max-w-350 flex items-center justify-between">
             <div className="flex flex-row gap-4 items-center">
-                <a className={"lg:w-11 lg:h-11 rounded-xl bg-white shadow-md"}>
+                <a className={"lg:w-11 lg:h-11 rounded-xl shadow-md"}>
                     {/* TODO: Make this more dynamic! */}
                     <Image
                         src="random-reminders-page/logo.svg"
