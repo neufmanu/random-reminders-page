@@ -15,12 +15,11 @@ export const Navigation = () => {
                         alt="Picture of the author"
                     />
                 </a>
-                {/* TODO: break title on mobile*/}
                 <h1 className="lg:text-lg font-bold">Stoobs: Random Reminders</h1>
             </div>
-            <a className="px-3 py-2 rounded-xl bg-light shadow-md w-fit flex flex-row gap-2 items-center">
+            <a className="hidden sm:flex px-3 py-2 rounded-xl bg-light shadow-md w-fit flex-row gap-2 items-center">
                 <DownloadIcon/>
-                <p className="hidden lg:block">
+                <p className="">
                     Get the app
                 </p>
             </a>
